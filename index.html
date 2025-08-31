@@ -1,5 +1,7 @@
+I'll modify your code to place the navigation bar above the header. Here's the updated HTML structure:
+
+```html
 <!doctype html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta name="google-site-verification" content="K5tQ5zmqZ0Rv4m0PkTaGQjx-f8CtHIPWqfYE5tIARTs" />
@@ -52,6 +54,84 @@ body {
     flex-direction: column;
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
+}
+
+/* ==================== NAVIGATION STYLES ==================== */
+nav {
+    background-color: var(--primary-color);
+    padding: 0.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+nav .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+nav ul li a:hover {
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+    transform: translateY(-2px);
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: var(--primary-color);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* ==================== HEADER STYLES ==================== */
@@ -125,76 +205,6 @@ body {
     margin: 0 auto;
     padding: 0 1rem;
     width: 100%;
-}
-
-/* Navigation */
-nav {
-    background-color: var(--primary-color);
-    padding: 0.5rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    flex-wrap: wrap;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    margin: 0 1rem;
-    position: relative;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-}
-
-nav ul li a:hover {
-    background-color: var(--accent-color);
-    color: var(--dark-color);
-    transform: translateY(-2px);
-}
-
-/* Dropdown Menu */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 4px;
-    top: 100%;
-    left: 0;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-    color: var(--primary-color);
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
 }
 
 /* Hero Section */
@@ -467,8 +477,7 @@ nav ul li a:hover {
 
 .event-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
+    box-shadow: 0 8px 20
 
 .event-date {
     background-color: var(--primary-color);
@@ -2321,6 +2330,7 @@ External links may appear on our site. DCI is not responsible for the privacy pr
     </footer>
 </body>
 </html>
+
 
 
 
